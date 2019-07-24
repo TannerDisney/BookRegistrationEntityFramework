@@ -19,10 +19,31 @@ namespace BookRegistrationEntityFramework
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            PrepopulateForm();
+        }
+        /// <summary>
+        /// Calls the "Populate" methods to populate the form with data.
+        /// </summary>
+        private void PrepopulateForm()
+        {
             PopulateCustomerList();
-
+            PopulateBookList();
         }
 
+        /// <summary>
+        /// Populates ComboBoxes with books from the database in alphabetical order.
+        /// </summary>
+        private void PopulateBookList()
+        {
+            List<Book> books = BookDb.GetBooks();
+
+            cboBooks.DataSource = books;
+            cboBooks.DisplayMember = nameof(Book.Title);
+        }
+
+        /// <summary>
+        /// Populates ComboBoxes with customers from the database in alphabetical order.
+        /// </summary>
         private void PopulateCustomerList()
         {
             List<Customer> customers = CustomerDb.GetCustomers();
