@@ -40,7 +40,12 @@ namespace BookRegistrationEntityFramework
         /// <returns></returns>
         public static Customer AddCustomer(Customer c)
         {
-            throw new NotImplementedException();
+            using (var context = new BookRegistrationEntities())
+            {
+                context.Customer.Add(c);
+                context.SaveChanges();
+                return c;
+            }
         }
     }
 }
