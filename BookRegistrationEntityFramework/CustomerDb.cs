@@ -18,6 +18,19 @@ namespace BookRegistrationEntityFramework
             var db = new BookRegistrationEntities();
 
             // Use Db context to retrieve all customers
+            /*
+            List<Customer> customers =
+                (
+                    from c in db.Customer
+                    where c.LastName == "Disney"
+                    orderby c.LastName descending
+                    select c
+                ).ToList<Customer>();
+              */
+            List<Customer> customers =
+              db.Customer.ToList();
+
+            return customers;
         }
         /// <summary>
         /// Add's a customer. Return's newly added customer

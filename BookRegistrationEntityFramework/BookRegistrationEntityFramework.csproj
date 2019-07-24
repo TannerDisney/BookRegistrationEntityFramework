@@ -58,6 +58,7 @@
     <Compile Include="Book.cs">
       <DependentUpon>BookRegistrationModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BookDb.cs" />
     <Compile Include="BookRegistrationModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,6 +78,7 @@
       <DependentUpon>BookRegistrationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomerDb.cs" />
+    <Compile Include="CustomerPartial.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +90,9 @@
     <Compile Include="Registration.cs">
       <DependentUpon>BookRegistrationModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
